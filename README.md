@@ -8,4 +8,4 @@ This project will handle transaction for laundy shop.
  
 ## TODO
  [x] Extract CI package to htdocs
- [ ] Config basic environtment. 
+ [ ] Config basic environtment. Set basic url, set autoload url, set route to login, make new file login.php at controller folder
