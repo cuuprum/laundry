@@ -36,13 +36,29 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="<?php echo base_url()."assets/index2.html"?>" method="post" ">
+    <?php
+        if(isset($_POST['login'])){
+            $user = $this->input->post('username');
+            $password = $this->input->post('password');
+
+            if($user == 'admin' && $password == 'adminjuga'){
+                header('location:'.base_url().'admin');
+            }
+            elseif($user == 'user' && $password == 'userjuga'){
+                header('location:'.base_url().'user');
+            }
+            else
+                echo "<script type='text/javascript'>alert('Username & Password not found.');</script>";
+        }
+    ?>
+
+    <form action="" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input name="username" type="text" class="form-control" placeholder="Username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input name="password" type="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -55,7 +71,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button name="login" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
         <!-- /.col -->
       </div>
