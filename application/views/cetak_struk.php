@@ -130,20 +130,74 @@ desired effect
       </h1>
       <!-- #TODO 3 : Edit breadcrumb dan icon -->
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa fa-print"></i> Cetak Struk</a></li>
       </ol>
     </section>
 
     <!-- Main content -->
-    <section class="content container-fluid">
-    
-    <!-- #TODO 4 : Edit content sesuai menu -->
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
+    <section class="invoice">
+      <!-- title row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            Laundry Via.
+            <small class="pull-right">Date: 2/10/2014</small>
+          </h2>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- info row -->
+      <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+        <p class="lead">Data Pelanggan:</p>
+          <address>
+            ID Pelanggan<br>
+            <strong>1</strong> <br> 
+            Nama Pelanggan<br>         
+            <strong>Camilla</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <strong>Phone:</strong> (804) 123-5432<br>
+          </address>
+        </div>
+        <div class="col-xs-6">
+          <p class="lead">Detail Laundry</p>
 
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th style="width:50%">Laundry Kiloan:</th>
+                <td>5 Kg</td>
+              </tr>
+              <tr>
+                <th>Laundry Satuan</th>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th>Total:</th>
+                <td>Rp75,000</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- /.col -->        
+      </div>
+      <!-- /.row -->
 
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-xs-12">
+          <a class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+          <button href="#" onClick="alert('Print struk')" type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
+          </button>
+          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+            <i class="fa fa-download"></i> Generate PDF
+          </button>
+        </div>
+      </div>
     </section>
+    <!-- /.content -->
+    <div class="clearfix"></div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
