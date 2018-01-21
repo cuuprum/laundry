@@ -24,6 +24,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="<?php echo base_url()."assets/dist/css/skins/skin-blue.min.css"?>">
+    <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="<?php echo base_url()."assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"?>">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?php echo base_url()."assets/bower_components/select2/dist/css/select2.min.css"?>">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -108,9 +112,9 @@ desired effect
         <li class="header">MENU ADMIN</li>
         <!-- Optionally, you can add icons to the links -->
         <!-- #TODO 1 : Edit active side bar menu dan link nya-->
-                <!-- <li class="active"><a href="#"><i class="glyphicon glyphicon-th-list"></i> <span>Daftar Pesanan Laundry</span></a></li> -->
+        <!-- <li class="active"><a href="#"><i class="glyphicon glyphicon-th-list"></i> <span>Daftar Pesanan Laundry</span></a></li> -->
         <li><a href="#"><i class="fa fa-list"></i> <span>Daftar Pesanan Laundry</span></a></li>
-        <li><a href="#"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
+        <li class="active"><a href="#"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
         <li><a href="#"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li>              
       </ul>
       <!-- /.sidebar-menu -->
@@ -129,7 +133,7 @@ desired effect
       </h1>
       <!-- #TODO 3 : Edit breadcrumb dan icon -->
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa fa-plus-square"></i> Insert Pesanan</a></li>
       </ol>
     </section>
 
@@ -140,8 +144,107 @@ desired effect
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-    
-
+    <div class="col-md-6">    
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Isi Data Pesanan</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                    <label>Nama Pelanggan</label>
+                    <input class="form-control" placeholder="Silahkan masukan nama pelanggan." type="text">
+                </div>
+                <div class="form-group">
+                  <label>Jenis Laundry</label>
+                  <select class="form-control" placeholder="Pilih jenis laundry.">
+                    <option>LaundrySatuan</option>
+                    <option>Laundry Kiloan</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Isi Laundry Satuan</label>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Baju
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Celana
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Jas
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Selimut
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Bed Cover
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label>Total Berat Laundry Kiloan</label>
+                    <input class="form-control" placeholder="Silahkan masukan jumlah berat laundry kiloan." type="text">
+                </div>
+                <div class="form-group">
+                    <label>Total Harga</label>
+                    <input class="form-control" disabled="" placeholder="Total harga akan dihitung otomatis" type="text">
+                </div>
+                <div class="form-group">
+                  <label>Status</label>
+                  <select class="form-control" placeholder="Pilih jenis laundry.">
+                    <option>Baru</option>
+                    <option>Proses</option>
+                    <option>Siap</option>
+                    <option>Selesai</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Tanggal Masuk Laundry</label>
+                    <div class="input-group date">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input class="form-control pull-right" id="datepicker_tgl_laundry" type="text">
+                    </div>
+                  <!-- /.input group -->
+                </div>
+                <div class="form-group">
+                  <label>Tanggal Selesai Laundry</label>
+                    <div class="input-group date">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input class="form-control pull-right" id="datepicker_tgl_selesai" type="text">
+                    </div>
+                  <!-- /.input group -->
+                </div>
+              </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <p class="help-block">Silahkan cek dengan baik sebelum Submit.</p>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.box -->
+    </div>
     </section>
     <!-- /.content -->
   </div>
@@ -251,6 +354,17 @@ desired effect
 <script src="<?php echo base_url()."assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"?>"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url()."assets/bower_components/fastclick/lib/fastclick.js"?>"></script>
+<!-- Select2 -->
+<script src="<?php echo base_url()."assets/bower_components/select2/dist/js/select2.full.min.js"?>"></script>
+<!-- InputMask -->
+<script src="<?php echo base_url()."assets/plugins/input-mask/jquery.inputmask.js"?>"></script>
+<script src="<?php echo base_url()."assets/plugins/input-mask/jquery.inputmask.date.extensions.js"?>"></script>
+<script src="<?php echo base_url()."assets/plugins/input-mask/jquery.inputmask.extensions.js"?>"></script>
+<!-- date-range-picker -->
+<script src="<?php echo base_url()."assets//bower_components/moment/min/moment.min.js"?>"></script>
+<script src="<?php echo base_url()."assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"?>"></script>
+<!-- bootstrap datepicker -->
+<script src="<?php echo base_url()."assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"?>"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
@@ -265,6 +379,75 @@ desired effect
       'ordering'    : true,
       'info'        : true,
       'autoWidth'   : false
+    })
+  })
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+    //Date picker
+    $('#datepicker_tgl_laundry').datepicker({
+      autoclose: true
+    })
+        //Date picker
+    $('#datepicker_tgl_selesai').datepicker({
+      autoclose: true
+    })
+
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass   : 'iradio_minimal-blue'
+    })
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass   : 'iradio_minimal-red'
+    })
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass   : 'iradio_flat-green'
+    })
+
+    //Colorpicker
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    //Timepicker
+    $('.timepicker').timepicker({
+      showInputs: false
     })
   })
 </script>    
