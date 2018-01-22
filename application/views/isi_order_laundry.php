@@ -108,11 +108,10 @@ desired effect
         <li class="header">MENU ADMIN</li>
         <!-- Optionally, you can add icons to the links -->
         <!-- #TODO 1 : Edit active side bar menu dan link nya-->
-                <!-- <li class="active"><a href="#"><i class="glyphicon glyphicon-th-list"></i> <span>Daftar Pesanan Laundry</span></a></li> -->
-        <li><a href="#"><i class="fa fa-list"></i> <span>Daftar Pesanan Laundry</span></a></li>
-        <li><a href="#"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
-        <li><a href="#"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li>
-        <li class="active"><a href="#"><i class="fa fa-tag"></i> <span>Isi Order Laundry</span></a></li>              
+        <li><a href="<?php echo base_url('pesanan_view');?>"><i class="fa fa-list"></i> <span>Daftar Pesanan Laundry</span></a></li>
+        <li><a href="<?php echo base_url('pesanan_insert');?>"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
+        <li><a href="<?php echo base_url('pesanan_update_selesai');?>"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li>      
+        <li class="active"><a href="<?php echo base_url('isi_order_laundry');?>"><i class="fa fa-tag"></i> <span>Isi Order Laundry</span></a></li>                    
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -156,38 +155,55 @@ desired effect
                             <input class="form-control" placeholder="Silahkan masukan jumlah berat laundry kiloan." type="text">
                         </div>
                         <div class="form-group">
-                            <label>Isi Laundry Satuan</label>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    Baju
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    Celana
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    Jas
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    Selimut
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    Bed Cover
-                                </label>
-                            </div>
+                        <label>Isi Laundry Satuan</label>
+                        <div>
+                          <select>
+                            <?php
+                              for($i=0;$i<10;$i++){
+                                echo "<option>".$i."</option>";
+                              }
+                            ?>
+                          </select> Baju
+                          <br>
+                          <br>
+                          <select>
+                            <?php
+                              for($i=0;$i<10;$i++){
+                                echo "<option>".$i."</option>";
+                              }
+                            ?>
+                          </select> Celana
+                          <br>
+                          <br>
+                          <select>
+                            <?php
+                              for($i=0;$i<10;$i++){
+                                echo "<option>".$i."</option>";
+                              }
+                            ?>
+                          </select> Jas
+                          <br>
+                          <br>
+                          <select>
+                            <?php
+                              for($i=0;$i<10;$i++){
+                                echo "<option>".$i."</option>";
+                              }
+                            ?>
+                          </select> Selimut
+                          <br>
+                          <br>
+                          <select>
+                            <?php
+                              for($i=0;$i<10;$i++){
+                                echo "<option>".$i."</option>";
+                              }
+                            ?>
+                          </select> Bed Cover
+                          <br>
+                          <br>                                                                                                   
                         </div>
+                      </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">

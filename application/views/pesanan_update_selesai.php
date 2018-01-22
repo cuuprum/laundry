@@ -123,11 +123,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">MENU ADMIN</li>
             <!-- Optionally, you can add icons to the links -->
             <!-- #TODO 1 : Edit active side bar menu dan link nya-->
-                    <!-- <li class="active"><a href="#"><i class="glyphicon glyphicon-th-list"></i> <span>Daftar Pesanan Laundry</span></a></li> -->
-            <li><a href="#"><i class="fa fa-list"></i> <span>Daftar Pesanan Laundry</span></a></li>
-            <li><a href="#"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li> 
-            <li><a href="#"><i class="fa fa-tag"></i> <span>Isi Order Laundry</span></a></li>                
+            <li><a href="<?php echo base_url('pesanan_view');?>"><i class="fa fa-list"></i> <span>Daftar Pesanan Laundry</span></a></li>
+            <li><a href="<?php echo base_url('pesanan_insert');?>"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
+            <li class="active"><a href="<?php echo base_url('pesanan_update_selesai');?>"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li>      
+            <li><a href="<?php echo base_url('isi_order_laundry');?>"><i class="fa fa-tag"></i> <span>Isi Order Laundry</span></a></li>                    
           </ul>
           <!-- /.sidebar-menu -->
         </section>
@@ -189,8 +188,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-warning">Proses</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-default"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-default"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -204,8 +204,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -219,8 +220,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -234,8 +236,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-success">Selesai</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -249,8 +252,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-warning">Proses</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -264,8 +268,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -279,8 +284,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-warning">Proses</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -294,8 +300,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-success">Selesai</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -309,8 +316,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -324,8 +332,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -339,8 +348,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -354,8 +364,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -369,8 +380,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -384,8 +396,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-success">Selesai</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -399,8 +412,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -414,8 +428,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -429,8 +444,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-warning">Proses</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -444,8 +460,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -459,8 +476,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-success">Selesai</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -474,8 +492,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-warning">Proses</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -489,8 +508,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-warning">Proses</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -504,8 +524,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-success">Selesai</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -519,8 +540,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-success">Selesai</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -534,8 +556,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -549,8 +572,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-warning">Proses</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -564,8 +588,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -579,8 +604,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -594,8 +620,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -609,8 +636,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-success">Selesai</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -624,8 +652,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-danger">Baru</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -639,8 +668,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
@@ -654,8 +684,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><span class="label label-primary">Siap</span></td>
                             <td>  
                               <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"><a href="<?php echo base_url('cetak_struk');?>"></a></i></button>
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"><a href="<?php echo base_url('cetak_struk');?>"></a></i></button>
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-default"><i class="fa fa-trash-o"><a href="<?php echo base_url('cetak_struk');?>"></a></i></button>
                               </div>
                             </td>
                         </tr>
@@ -680,21 +711,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div> 
           </div>     
 
-          <!-- Update dan Delete Modal - Muncul pas di klik action di tabel -->
-          <div class="modal fade" id="modal-default">
+          <!-- Update- Muncul pas di klik action di tabel -->
+          <div class="modal fade" id="modal-update">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Default Modal</h4>
+                    <h4 class="modal-title">Update Status Laundry</h4>
                   </div>
                   <div class="modal-body">
-                    <p>One fine body&hellip;</p>
+                    <div class="form-group">
+                      <label>Status</label>
+                      <select class="form-control" placeholder="Pilih jenis laundry.">
+                        <option>Baru</option>
+                        <option>Proses</option>
+                        <option>Siap</option>
+                        <option>Selesai</option>
+                      </select>
+                    </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
                   </div>
                 </div>
                 <!-- /.modal-content -->
@@ -702,7 +741,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- /.modal-dialog -->
             </div>
             <!-- /.modal -->
-        </section>
+
+          <!-- Delete Modal - Muncul pas di klik action di tabel -->
+          <div class="modal fade" id="modal-delete">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Hapus Data Laundry</h4>
+                  </div>
+                  <div class="modal-body">
+                    Anda yakin menghapus data ini?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-danger">Hapus</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->            
+
+          </section>
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
