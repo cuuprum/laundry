@@ -33,48 +33,48 @@
     <a href="<?php echo base_url()."home"?>"><b>Laundry</b>Via</a>
   </div>
 
-  <div class="register-box-body">
-    <p class="login-box-msg"><label>Pendaftaran Akun User Baru</label></p>
+        <div class="register-box-body">
+          <p class="login-box-msg"><label>Pendaftaran Akun User Baru</label></p>
 
-    <form action="#" method="post">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Nama Lengkap">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <textarea class="form-control" placeholder="Alamat"></textarea>
-        <span class="fa fa-home form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="No Telepon">
-        <span class="fa fa-phone form-control-feedback"></span>
-      </div>            
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username">
-        <span class="fa fa-user form-control-feedback"></span>
-      </div>      
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Ulangi Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-        <!-- /.col -->
-        <div class="col-xs-4 pull-right">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
+          <form action="#" method="post">
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="Nama Lengkap">
+              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <textarea class="form-control" placeholder="Alamat"></textarea>
+              <span class="fa fa-home form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="No Telepon">
+              <span class="fa fa-phone form-control-feedback"></span>
+            </div>            
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="Username">
+              <span class="fa fa-user form-control-feedback"></span>
+            </div>      
+            <div class="form-group has-feedback">
+              <input type="password" class="form-control" placeholder="Password">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <input type="password" class="form-control" placeholder="Ulangi Password">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+              <!-- /.col -->
+              <div class="col-xs-4 pull-right">
+                <button type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+
+          <a href="<?php echo base_url()."home"?>" class="text-center">Saya sudah memiliki akun.</a>
         </div>
-        <!-- /.col -->
+        <!-- /.form-box -->
       </div>
-    </form>
-
-    <a href="<?php echo base_url()."home"?>" class="text-center">Saya sudah memiliki akun.</a>
-  </div>
-  <!-- /.form-box -->
-</div>
-<!-- /.register-box -->
+      <!-- /.register-box -->
 
 <!-- jQuery 3 -->
 <script src="<?php echo base_url()."assets/bower_components/jquery/dist/jquery.min.js"?>"></script>

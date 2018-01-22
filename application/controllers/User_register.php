@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script allowed.');
 
-class Register_user extends CI_Controller{
+class User_register extends CI_Controller{
     public function index(){
-        $this->load->view('register_user');
+        $this->load->view('user_register');
     }
 }
 

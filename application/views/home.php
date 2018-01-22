@@ -62,7 +62,7 @@
                                         <li><a href="#slider">Home</a></li>
                                         <li><a href="#abouts">About Us</a></li>
                                         <!-- <li><a href="#features">Menu</a></li> -->
-                                        <li><a href="<?php echo base_url()."register_user"?>">Register</a></li> -->
+                                        <li><a href="<?php echo base_url()."user_register"?>">Register</a></li> -->
                                         <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
