@@ -41,8 +41,8 @@
             $username = $this->input->post('username');
             $password = $this->input->post('password');
 
-            //$this->db_model->login($username, $password);
-            
+            $this->db_model->login($username, $password);
+            /*
             if($username == 'admin' && $password == 'adminjuga'){
                 header('location:'.base_url().'admin');
             }
@@ -51,7 +51,7 @@
             }
             else
                 echo "<script type='text/javascript'>alert('Username & Password not found.');</script>";
-          
+            */
         }
     ?>
 

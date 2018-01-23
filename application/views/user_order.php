@@ -152,7 +152,7 @@ desired effect
                 <div class="form-group">
                   <label>Jenis Laundry</label>
                   <select class="form-control" placeholder="Pilih jenis laundry.">
-                    <option>LaundrySatuan</option>
+                    <option>Laundry Satuan</option>
                     <option>Laundry Kiloan</option>
                   </select>
                 </div>            
