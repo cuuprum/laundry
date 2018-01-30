@@ -24,15 +24,13 @@ This project will handle transaction for laundy shop.
 
  ### now
  * [ ] Login session
-
  * [ ] order laundry
 	
  ### later
  * [ ] ubah view pesanan jadi lbh simple hanya lihat pesanan baru saja, sesuai sama input user
  * [ ] pesan return, berhasil gagal dll abis redirect
-
  * [ ] bikin view database join itu yang pegawai sama nama customer
- 
+ * [ ] customer.php pakai id konsumen untuk view
  ### add
  * [ ] customer profile update -> profile username password
  * [ ] admin insert, update, view satu page aja

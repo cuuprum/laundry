@@ -143,15 +143,15 @@ desired effect
         <!-- general form elements -->
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Oder Laundry</h3>
+                <h3 class="box-title">Order Laundry</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="POST" action="<?= base_url('Customer_order/insertOrderLaundry') ?>">
               <div class="box-body">
                 <div class="form-group">
                   <label>Jenis Laundry</label>
-                  <select class="form-control" placeholder="Pilih jenis laundry.">
+                  <select class="form-control" name="jenis_laundry" placeholder="Pilih jenis laundry.">
                     <option>Laundry Satuan</option>
                     <option>Laundry Kiloan</option>
                   </select>
@@ -165,7 +165,7 @@ desired effect
                       <?php
                         $now = new DateTime();                        
                       ?>
-                      <input class="form-control pull-right" disabled="" id="datepicker_tgl_laundry" type="text" value="<?php echo $now->format('Y-m-d H:i:s');?>">
+                      <input class="form-control pull-right" name="tanggal_order" id="datepicker_tgl_laundry" type="text" value="<?php echo $now->format('Y-m-d H:i:s');?>">
                     </div>
                   <!-- /.input group -->
                 </div>
