@@ -168,7 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <thead>
                     <tr>
                       <th>Tanggal Laundry</th>
-                      <th>Nama Pelanggan</th>
+                      <th>Nama Konsumen</th>
                       <th>Jenis Laundry</th>
                       <th>Isi Laudry Satuan</th>
                       <th>Total Berat Laundry</th>
@@ -694,7 +694,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <tfoot>
                       <tr>
                       <th>Tanggal Laundry</th>
-                      <th>Nama Pelanggan</th>
+                      <th>Nama Konsumen</th>
                       <th>Jenis Laundry</th>
                       <th>Isi Laudry Satuan</th>
                       <th>Total Berat Laundry</th>

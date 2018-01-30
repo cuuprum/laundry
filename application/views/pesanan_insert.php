@@ -152,23 +152,35 @@ desired effect
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="POST" action="<?= base_url('Pesanan_insert/insertPesanan') ?>">
               <div class="box-body">
+              <?php
+                // echo $getNewId; new id done
+               ?>
                 <div class="form-group">
-                    <label>Nama Pelanggan</label>
-                    <input class="form-control" placeholder="Silahkan masukan nama pelanggan." type="text">
+                    <label>ID Pemesanan</label>
+                    <input class="form-control" name="id_order"  value ="<?= $getNewId ?>" type="text">
+                </div>
+                <!-- #TODO Nanti ganti jadi searchid by nama Konsumen -->
+                <div class="form-group">
+                    <label>ID Konsumen</label>
+                    <input class="form-control" name="id_konsumen" placeholder="Silahkan masukan ID Konsumen." type="text">
+                </div>
+                <div class="form-group">
+                    <label>Nama Konsumen</label>
+                    <input class="form-control" name="nama_konsumen"placeholder="Silahkan masukan Nama Konsumen." type="text">
                 </div>
                 <div class="form-group">
                   <label>Jenis Laundry</label>
-                  <select class="form-control" placeholder="Pilih jenis laundry.">
+                  <select class="form-control" name="jenis_laundry" placeholder="Pilih jenis laundry.">
                     <option>LaundrySatuan</option>
                     <option>Laundry Kiloan</option>
                   </select>
                 </div>            
                 <div class="form-group">
-                  <label>Isi Laundry Satuan</label>
+                  <label>Isi Laundry Satuan</label>                  
                   <div>
-                    <select>
+                    <select name="jumlah_baju">
                       <?php
                         for($i=0;$i<10;$i++){
                           echo "<option>".$i."</option>";
@@ -177,7 +189,7 @@ desired effect
                     </select> Baju
                     <br>
                     <br>
-                    <select>
+                    <select name="jumlah_celana">
                       <?php
                         for($i=0;$i<10;$i++){
                           echo "<option>".$i."</option>";
@@ -186,7 +198,7 @@ desired effect
                     </select> Celana
                     <br>
                     <br>
-                    <select>
+                    <select name="jumlah_jas">
                       <?php
                         for($i=0;$i<10;$i++){
                           echo "<option>".$i."</option>";
@@ -195,7 +207,7 @@ desired effect
                     </select> Jas
                     <br>
                     <br>
-                    <select>
+                    <select name="jumlah_selimut">
                       <?php
                         for($i=0;$i<10;$i++){
                           echo "<option>".$i."</option>";
@@ -204,7 +216,7 @@ desired effect
                     </select> Selimut
                     <br>
                     <br>
-                    <select>
+                    <select name="jumlah_bed_cover">
                       <?php
                         for($i=0;$i<10;$i++){
                           echo "<option>".$i."</option>";
@@ -217,15 +229,15 @@ desired effect
                 </div>
                 <div class="form-group">
                     <label>Total Berat Laundry Kiloan</label>
-                    <input class="form-control" placeholder="Silahkan masukan jumlah berat laundry kiloan." type="text">
+                    <input class="form-control" name="total_berat_kiloan" placeholder="Silahkan masukan jumlah berat laundry kiloan." type="text">
                 </div>
                 <div class="form-group">
                     <label>Total Harga</label>
-                    <input class="form-control" disabled="" placeholder="Total harga akan dihitung otomatis" type="text">
+                    <input class="form-control" name="total_harga" disabled="" placeholder="Total harga akan dihitung otomatis" type="text">
                 </div>
                 <div class="form-group">
                   <label>Status</label>
-                  <select class="form-control" placeholder="Pilih jenis laundry.">
+                  <select class="form-control" name="status" placeholder="Pilih jenis laundry.">
                     <option>Baru</option>
                     <option>Proses</option>
                     <option>Siap</option>
@@ -238,7 +250,7 @@ desired effect
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input class="form-control pull-right" id="datepicker_tgl_laundry" type="text">
+                      <input class="form-control pull-right" name="tanggal_order" id="datepicker_tgl_laundry" type="text">
                     </div>
                   <!-- /.input group -->
                 </div>
@@ -248,7 +260,7 @@ desired effect
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input class="form-control pull-right" id="datepicker_tgl_selesai" type="text">
+                      <input class="form-control pull-right" name="tanggal_selesai"id="datepicker_tgl_selesai" type="text">
                     </div>
                   <!-- /.input group -->
                 </div>
@@ -357,11 +369,13 @@ desired effect
 
     //Date picker
     $('#datepicker_tgl_laundry').datepicker({
-      autoclose: true
+      autoclose: true,
+      format:'yyyy-mm-dd'
     })
         //Date picker
     $('#datepicker_tgl_selesai').datepicker({
-      autoclose: true
+      autoclose: true,
+      format:'yyyy-mm-dd'
     })
 
     //iCheck for checkbox and radio inputs

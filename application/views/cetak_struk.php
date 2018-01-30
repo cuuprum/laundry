@@ -149,11 +149,11 @@ desired effect
       <!-- info row -->
       <div class="row invoice-info">
         <div class="col-sm-4 invoice-col">
-        <p class="lead">Data Pelanggan:</p>
+        <p class="lead">Data Konsumen</p>
           <address>
-            ID Pelanggan<br>
+            ID Konsumen<br>
             <strong>1</strong> <br> 
-            Nama Pelanggan<br>         
+            Nama Konsumen<br>         
             <strong>Camilla</strong><br>
             795 Folsom Ave, Suite 600<br>
             San Francisco, CA 94107<br>

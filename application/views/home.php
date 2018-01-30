@@ -62,7 +62,7 @@
                                         <li><a href="#slider">Home</a></li>
                                         <li><a href="#abouts">About Us</a></li>
                                         <!-- <li><a href="#features">Menu</a></li> -->
-                                        <li><a href="<?php echo base_url()."user_register"?>">Register</a></li> -->
+                                        <li><a href="<?php echo base_url()."customer_register"?>">Register</a></li>
                                         <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
@@ -78,7 +78,7 @@
             <div class="modal fade" id="login-modal">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                    <form action="../../index.html" method="post">
+                    <form action="<?= base_url('login/user_login_process');?>" method="post">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span></button>
@@ -88,17 +88,17 @@
                             <div class="register-box-body">
                                 
                                     <div class="form-group has-feedback">
-                                        <input type="text" class="form-control" placeholder="Username">
+                                        <input type="text" class="form-control" placeholder="Username" name="username">
                                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" class="form-control" placeholder="Password" name="password">
                                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-4">
                                             Saya belum memiliki akun </a>
-                                            <button type="button" class="btn btn-primary btn-block btn-flat">Register</button>
+                                            <a href="<?php echo base_url('user_register');?>"><button type="button" class="btn btn-primary btn-block btn-flat">Register</button></a>
                                         </div>
                                         <!-- /.col -->
                                     </div>                                

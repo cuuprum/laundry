@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+
+<?php
+if (isset($this->session->userdata['logged_in'])) {
+
+  header(base_url("validation_login"));
+
+}
+?>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +39,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?php echo base_url()."assets/index2.html"?>"><b>Laundry</b>Shop</a>
+    <a href="<?php echo base_url("home")?>"><b>Laundry</b>Shop</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -55,7 +64,20 @@
         }
     ?>
 
-    <form action="" method="post">
+    <?php
+      if (isset($logout_message)) {
+        echo "<div class='message'>";
+        echo $logout_message;
+        echo "</div>";
+      }
+
+      if (isset($message_display)) {
+        echo "<div class='message'>";
+        echo $message_display;
+        echo "</div>";
+      }
+    ?>
+    <form action="<?php echo base_url("login/user_login_process"); ?>" method="post">
       <div class="form-group has-feedback">
         <input name="username" type="text" class="form-control" placeholder="Username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

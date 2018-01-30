@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Laundry Via | Admin Page</title>
+  <title>Laundry Via | User Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -65,7 +65,7 @@ desired effect
     <!-- Logo -->
     <a href="<?php echo base_url()."admin"?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>L</b>V</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Laundry</b>Via</span>
     </a>
@@ -105,13 +105,12 @@ desired effect
     <section class="sidebar">
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MENU ADMIN</li>
+        <li class="header">MENU USER</li>
         <!-- Optionally, you can add icons to the links -->
         <!-- #TODO 1 : Edit active side bar menu dan link nya-->
-        <li class="active"><a href="<?php echo base_url('pesanan_view');?>"><i class="fa fa-list"></i> <span>Daftar Pesanan Laundry</span></a></li>
-        <li><a href="<?php echo base_url('pesanan_insert');?>"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
-        <li><a href="<?php echo base_url('pesanan_update_selesai');?>"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li>      
-        <li><a href="<?php echo base_url('isi_order_laundry');?>"><i class="fa fa-tag"></i> <span>Isi Order Laundry</span></a></li>                    
+        <!-- <li class="active"><a href="#"><i class="glyphicon glyphicon-th-list"></i> <span>Daftar Pesanan Laundry</span></a></li> -->
+        <li><a href="<?php echo base_url('customer');?>"><i class="fa fa-list"></i> <span>Laundry Saya</span></a></li>
+        <li class="active"><a href="<?php echo base_url('customer_order');?>"><i class="fa fa-plus-square"></i> <span>Order Laundry</span></a></li>                            
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -129,95 +128,56 @@ desired effect
       </h1>
       <!-- #TODO 3 : Edit breadcrumb dan icon -->
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-list"></i> View Pesanan</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Order Laundry</a></li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content container-fluid">
+    
+    <!-- #TODO 4 : Edit content sesuai menu -->
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-
-      <!-- Hover Data Table -->
-      <div class="row">
-        <div class="col-xs-12">
-        <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Daftar Pesanan Laundry</h3>
+        <div class="col-md-6">    
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Oder Laundry</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>#</th>
-                  <th>ID</th>
-                  <th>Tanggal Laundry</th>
-                  <th>ID Konsumen</th> <!-- #TODO Nanti ganti jadi nama konsumen -->
-                  <th>Jenis Laundry</th>
-                  <th>Isi Laudry Satuan</th>
-                  <th>Total Berat Laundry</th>
-                  <th>Total Harga</th>
-                  <th>Tanggal Selesai Laundry</th>
-                  <th>Status</th>
-                  <th>ID Konsumen</th> <!-- #TODO Nanti di hide -->
-                  <th>ID Pegawai</th> <!-- #TODO Nanti di hide -->
-                </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                        $i = 1;
-
-                        foreach($listPesanan->result() as $row){
-                    ?>
-                    <tr>
-                        <td><?= $i ?></td>
-                        <td><?= $row->id_order ?></td>
-                        <td><?= $row->tanggal_order ?></td>
-                        <td><?= $row->id_konsumen ?></td> <!-- #TODO Nanti ganti jadi nama konsumen -->
-                        <td><?= $row->jenis_laundry ?></td>
-                        <td><?= $row->isi_laundry_satuan ?></td>
-                        <td><?= $row->total_berat_kiloan ?></td>
-                        <td><?= $row->total_harga ?></td>
-                        <td><?= $row->tanggal_selesai ?></td>
-                        <td><?= $row->status ?></td>
-                        <!--
-                        #TODO Nanti sesuai status dengan label berwarna
-                        <td><span class="label label-success">Selesai</span></td>
-                        <td><span class="label label-warning">Proses</span></td>
-                        <td><span class="label label-danger">Baru</span></td>
-                        -->
-                        <td><?= $row->id_konsumen ?></td> <!-- #TODO Nanti di hide -->
-                        <td><?= $row->id_pegawai ?></td> <!-- #TODO Nanti di hide -->
-                    </tr>
-                    <?php
-                            $i++;                    
-                        }
-                    ?>
-                </tbody>
-                <tfoot>
-                    <th>#</th>
-                    <th>ID</th>
-                    <th>Tanggal Laundry</th>
-                    <th>ID Konsumen</th> <!-- #TODO Nanti ganti jadi nama konsumen -->
-                    <th>Jenis Laundry</th>
-                    <th>Isi Laudry Satuan</th>
-                    <th>Total Berat Laundry</th>
-                    <th>Total Harga</th>
-                    <th>Tanggal Selesai Laundry</th>
-                    <th>Status</th>
-                    <th>ID Konsumen</th> <!-- #TODO Nanti di hide -->
-                    <th>ID Pegawai</th> <!-- #TODO Nanti di hide -->
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->        
-        </div> 
-      </div>      
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label>Jenis Laundry</label>
+                  <select class="form-control" placeholder="Pilih jenis laundry.">
+                    <option>Laundry Satuan</option>
+                    <option>Laundry Kiloan</option>
+                  </select>
+                </div>            
+                <div class="form-group">
+                  <label>Tanggal Masuk Laundry</label>
+                    <div class="input-group date">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <?php
+                        $now = new DateTime();                        
+                      ?>
+                      <input class="form-control pull-right" disabled="" id="datepicker_tgl_laundry" type="text" value="<?php echo $now->format('Y-m-d H:i:s');?>">
+                    </div>
+                  <!-- /.input group -->
+                </div>
+              </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Order</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.box -->
+    </div>
 
     </section>
     <!-- /.content -->
