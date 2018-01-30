@@ -17,5 +17,5 @@ This project will handle transaction for laundy shop.
  * [x] Create table view on pesanan_update_selesai
  * [x] Create modal for update status
  * [x] Create direct table update status using modal 
- * [ ] Create delete button at table view
+ * [x] Create delete button at table view
  * [ ] Create dinamic page include at artikel controller and view

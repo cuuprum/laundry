@@ -125,8 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- #TODO 1 : Edit active side bar menu dan link nya-->
             <li><a href="<?php echo base_url('pesanan_view');?>"><i class="fa fa-list"></i> <span>Daftar Pesanan Laundry</span></a></li>
             <li><a href="<?php echo base_url('pesanan_insert');?>"><i class="fa fa-plus-square"></i> <span>Isi Data Pesanan</span></a></li>
-            <li class="active"><a href="<?php echo base_url('pesanan_update_selesai');?>"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li>      
-            <li><a href="<?php echo base_url('isi_order_laundry');?>"><i class="fa fa-tag"></i> <span>Isi Order Laundry</span></a></li>                    
+            <li class="active"><a href="<?php echo base_url('pesanan_update_selesai');?>"><i class="fa fa-edit"></i> <span>Update Selesai Laundry</span></a></li>                       
           </ul>
           <!-- /.sidebar-menu -->
         </section>
