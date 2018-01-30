@@ -34,5 +34,11 @@
             // #TODO nanti bikin return status insert data nya ya
             $this->db->insert('pesanan_laundry',$_data);
         }
+
+        function updateStatus($_data, $_condition){
+            $this->db->where($_condition);
+            $this->db->update('pesanan_laundry', $_data);
+        }
+
     }
 ?>

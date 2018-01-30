@@ -183,7 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <tbody>
                         <?php
                           $i = 1;
-                          foreach($listPesanan->result() as row){
+                          foreach($listPesanan->result() as $row){
                         ?>
                         <tr>
                             <td><?= $i ?></td>
@@ -239,22 +239,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Update Status Laundry</h4>
                   </div>
-                  <div class="modal-body">
-                    <div class="form-group">
-                      <input type="hide" id="id_order_modal_delete" name="id_order_delete"/>
-                      <label>Status</label>
-                      <select class="form-control" placeholder="Pilih jenis laundry.">
-                        <option>Baru</option>
-                        <option>Proses</option>
-                        <option>Siap</option>
-                        <option>Selesai</option>
-                      </select>
+                  <form method="POST" action="<?= base_url('Pesanan_update_selesai/updateStatus')?>">
+                    <div class="modal-body">
+                      <div class="form-group">
+                          <input type="hide" id="id_order_modal_update" name="id_order_update"/>
+                          <label>Status</label>
+                          <select class="form-control" placeholder="Pilih jenis laundry." name="status_modal_update">
+                            <!-- #TODO nanti buat selected status based on klikan di baris tabel -->
+                            <option>Baru</option>
+                            <option>Proses</option>
+                            <option>Siap</option>
+                            <option>Selesai</option>
+                          </select>
+                      </div>
                     </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-primary">Simpan</button>
-                  </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
+                      <button type="button" class="btn btn-primary">Simpan</button>
+                    </div>
+                  </form>
                 </div>
                 <!-- /.modal-content -->
               </div>

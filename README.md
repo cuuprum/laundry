@@ -14,4 +14,5 @@ This project will handle transaction for laundy shop.
  * [x] Create model, create database, login using database
  * [x] Change name user to konsumen
  * [x] Create method newId at pesanan_insert
+ * [ ] Create table view on pesanan_update_selesai and create modal for update status
  * [ ] Create dinamic page include at artikel controller and view
