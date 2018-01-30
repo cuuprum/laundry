@@ -19,3 +19,26 @@ This project will handle transaction for laundy shop.
  * [x] Create direct table update status using modal 
  * [x] Create delete button at table view
  * [ ] Create dinamic page include at artikel controller and view
+
+ ### now
+ * [x] bikin view update selesai
+ * [x] bikin click button delete di row 
+ * [x] bikin click button update di row
+ * [x] direct ke form update, pakai modal
+ * [ ] customer view my laundry
+ * [ ] order laundry
+	
+ ### later
+ * [ ] ubah view pesanan jadi lbh simple hanya lihat pesanan baru saja, sesuai sama input user
+ * [ ] pesan return, berhasil gagal dll abis redirect
+ * [ ] customer view, pakein label status
+ * [ ] bikin view database join itu yan pegawai sama nama customer
+ 
+ ### add
+ * [ ] customer profile update -> profile username password
+ * [ ] admin insert, update, view satu page aja
+ * [ ] session login
+ * [ ] perhitungan harga
+ * [ ] print pdf
+ * [ ]
+ 
