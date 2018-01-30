@@ -180,13 +180,18 @@ desired effect
                         <td><?= $row->total_berat_kiloan ?></td>
                         <td><?= $row->total_harga ?></td>
                         <td><?= $row->tanggal_selesai ?></td>
-                        <td><?= $row->status ?></td>
-                        <!--
-                        #TODO Nanti sesuai status dengan label berwarna
-                        <td><span class="label label-success">Selesai</span></td>
-                        <td><span class="label label-warning">Proses</span></td>
-                        <td><span class="label label-danger">Baru</span></td>
-                        -->
+                    <?php
+                        if($row->status == "Baru")
+                          echo '<td><span class="label label-danger">Baru</span></td>';
+                        elseif($row->status == "Proses")
+                          echo '<td><span class="label label-warning">Proses</span></td>';
+                        elseif($row->status == "Siap")
+                          echo '<td><span class="label label-primary">Siap</span></td>';
+                        elseif($row->status == "Selesai")
+                          echo '<td><span class="label label-success">Selesai</span></td>';
+                        else
+                          echo '<td><span class="label">Status Tidak Diketahui</span></td>';
+                    ?>
                         <td><?= $row->id_konsumen ?></td> <!-- #TODO Nanti di hide -->
                         <td><?= $row->id_pegawai ?></td> <!-- #TODO Nanti di hide -->
                     </tr>

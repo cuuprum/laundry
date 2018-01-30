@@ -193,7 +193,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td><?= $row->isi_laundry_satuan ?></td>
                             <td><?= $row->total_berat_kiloan ?></td>
                             <td><?= $row->tanggal_selesai ?></td>
-                            <td><?= $row->status ?></td>
+                        <?php
+                          if($row->status == "Baru")
+                            echo '<td><span class="label label-danger">Baru</span></td>';
+                          elseif($row->status == "Proses")
+                            echo '<td><span class="label label-warning">Proses</span></td>';
+                          elseif($row->status == "Siap")
+                            echo '<td><span class="label label-primary">Siap</span></td>';
+                          elseif($row->status == "Selesai")
+                            echo '<td><span class="label label-success">Selesai</span></td>';
+                          else
+                            echo '<td><span class="label">Status Tidak Diketahui</span></td>';
+                        ?>
                             <td>  
                               <div class="btn-group">
                                 <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
