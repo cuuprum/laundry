@@ -166,7 +166,7 @@ desired effect
                 </tr>
                 </thead>
                 <tbody>
-                    <?php 
+                    <?php   
                         $i = 1;
 
                         foreach($listPesanan->result() as $row){

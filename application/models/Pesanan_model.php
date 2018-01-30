@@ -22,6 +22,13 @@
             return $this->db->get()->row()->lastId + 1;
         }
 
+        function getAllPesanan(){
+            $this->db->select('*');
+            $this->db->from('pesanan_laundry');
+
+            return $this->db->get();
+        }
+
         function insertPesanan($_data){
             // Insert data to table pesanan_laundry using array $_data
             // #TODO nanti bikin return status insert data nya ya

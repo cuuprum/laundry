@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed.');
 
 class Pesanan_insert extends CI_Controller{
 
-    // ini konstruktor
     function __construct(){
         parent::__construct();
         $this->load->model('pesanan_model');
@@ -33,14 +32,14 @@ class Pesanan_insert extends CI_Controller{
             'jenis_laundry' => $this->input->post('jenis_laundry'),
             'isi_laundry_satuan' => $isiLaundrySatuanJSON,
             'total_berat_kiloan' => $this->input->post('total_berat_kiloan'),
-            'total_harga' => 1000, //$this->input->post('total_harga'),
+            'total_harga' => 1000, // #TODO nanti hitung pakai if di jquery // $this->input->post('total_harga'),
             'tanggal_selesai' => $tanggal_selesai,
             'status' => $this->input->post('status'),
             'id_konsumen' => $this->input->post('id_konsumen'),
-            'id_pegawai' => 1 //$this->input->post('id_pegawai')
+            'id_pegawai' => 1 // #TODO nanti pakai sesssion // $this->input->post('id_pegawai')
         ); 
         
-        print_r($data);
+        //print_r($data);
         // #TODO nanti bikin return status insert data nya ya
         $this->pesanan_model->insertPesanan($data);
 

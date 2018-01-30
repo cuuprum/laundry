@@ -155,6 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!--------------------------
             | Your Page Content Here |
             -------------------------->
+            
           <!-- Hover Data Table -->
           <div class="row">
             <div class="col-xs-12">
@@ -167,6 +168,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
+                      <th>#</th>
+                      <th>ID Pesanan</th>
                       <th>Tanggal Laundry</th>
                       <th>Nama Konsumen</th>
                       <th>Jenis Laundry</th>
@@ -178,529 +181,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </tr>
                     </thead>
                     <tbody>
+                        <?php
+                          $i = 1;
+                          foreach($listPesanan->result() as row){
+                        ?>
                         <tr>
-                            <td>12/03/2018</td>
-                            <td>Chadwick</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>2</td>
-                            <td>01/11/2018</td>
-                            <td><span class="label label-warning">Proses</span></td>
+                            <td><?= $i ?></td>
+                            <td><?= $row->id_order ?></td>
+                            <td><?= $row->tanggal_order ?></td>
+                            <td><?= $row->id_konsumen?></td>
+                            <td><?= $row->jenis_laundry ?></td>
+                            <td><?= $row->isi_laundry_satuan ?></td>
+                            <td><?= $row->total_berat_kiloan ?></td>
+                            <td><?= $row->tanggal_selesai ?></td>
+                            <td><?= $row->status ?></td>
                             <td>  
                               <div class="btn-group">
                                 <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update" data-content="<?= $row->id_order?>"><i class="fa fa-edit"></i></button></a>
+                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"data-content="<?= $row->id_order?>"><i class="fa fa-trash-o"></i></button></a>
                               </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>04/17/2018</td>
-                            <td>Yvette</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>7</td>
-                            <td>01/12/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>07/01/2018</td>
-                            <td>Neve</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>9</td>
-                            <td>01/16/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>12/21/2018</td>
-                            <td>Buffy</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>2</td>
-                            <td>01/11/2018</td>
-                            <td><span class="label label-success">Selesai</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>09/27/2018</td>
-                            <td>Vivien</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>5</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-warning">Proses</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>12/20/2018</td>
-                            <td>Melvin</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>4</td>
-                            <td>01/16/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>06/27/2018</td>
-                            <td>Brendan</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>6</td>
-                            <td>01/15/2018</td>
-                            <td><span class="label label-warning">Proses</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>06/14/2018</td>
-                            <td>Fallon</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>6</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-success">Selesai</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>05/21/2018</td>
-                            <td>Daphne</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>7</td>
-                            <td>01/14/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>02/15/2018</td>
-                            <td>Zachery</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>10</td>
-                            <td>01/12/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>01/14/2018</td>
-                            <td>Kellie</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>3</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10/22/2018</td>
-                            <td>Rhona</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>6</td>
-                            <td>01/14/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>07/24/2018</td>
-                            <td>Winifred</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>8</td>
-                            <td>01/16/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>04/10/2018</td>
-                            <td>Jolie</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>3</td>
-                            <td>01/15/2018</td>
-                            <td><span class="label label-success">Selesai</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10/10/2018</td>
-                            <td>Calvin</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>1</td>
-                            <td>01/14/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>04/19/2018</td>
-                            <td>Hilel</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>8</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>01/29/2018</td>
-                            <td>Samson</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>4</td>
-                            <td>01/11/2018</td>
-                            <td><span class="label label-warning">Proses</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>09/30/2018</td>
-                            <td>Lydia</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>7</td>
-                            <td>01/12/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>07/20/2018</td>
-                            <td>Delilah</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>1</td>
-                            <td>01/11/2018</td>
-                            <td><span class="label label-success">Selesai</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>05/09/2018</td>
-                            <td>Ezra</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>5</td>
-                            <td>01/11/2018</td>
-                            <td><span class="label label-warning">Proses</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>08/25/2018</td>
-                            <td>Cara</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>3</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-warning">Proses</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>09/15/2018</td>
-                            <td>Buffy</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>5</td>
-                            <td>01/12/2018</td>
-                            <td><span class="label label-success">Selesai</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>02/04/2018</td>
-                            <td>Mollie</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>1</td>
-                            <td>01/11/2018</td>
-                            <td><span class="label label-success">Selesai</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>02/09/2018</td>
-                            <td>Allegra</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>2</td>
-                            <td>01/15/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>04/26/2018</td>
-                            <td>Carly</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>6</td>
-                            <td>01/12/2018</td>
-                            <td><span class="label label-warning">Proses</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>07/21/2018</td>
-                            <td>Wynter</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>1</td>
-                            <td>01/14/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>04/26/2018</td>
-                            <td>Hyatt</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>2</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>08/29/2018</td>
-                            <td>Dana</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>7</td>
-                            <td>01/15/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>01/10/2018</td>
-                            <td>Camilla</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>9</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-success">Selesai</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>01/19/2018</td>
-                            <td>Xenos</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>5</td>
-                            <td>01/12/2018</td>
-                            <td><span class="label label-danger">Baru</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>01/08/2018</td>
-                            <td>Graiden</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>4</td>
-                            <td>01/14/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <a href="<?php echo base_url('cetak_struk');?>"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"></i></button></a>
-                                <a><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash-o"></i></button></a>
-                              </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>07/29/2018</td>
-                            <td>Tiger</td>
-                            <td>Kiloan</td>
-                            <td>-</td>
-                            <td>2</td>
-                            <td>01/13/2018</td>
-                            <td><span class="label label-primary">Siap</span></td>
-                            <td>  
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-print"><a href="<?php echo base_url('cetak_struk');?>"></a></i></button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-update"><i class="fa fa-edit"><a href="<?php echo base_url('cetak_struk');?>"></a></i></button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-default"><i class="fa fa-trash-o"><a href="<?php echo base_url('cetak_struk');?>"></a></i></button>
-                              </div>
-                            </td>
-                        </tr>
+                        <?php
+                            $i++;
+                          }
+                        ?>                        
                     </tbody>
                     <tfoot>
                       <tr>
-                      <th>Tanggal Laundry</th>
-                      <th>Nama Konsumen</th>
-                      <th>Jenis Laundry</th>
-                      <th>Isi Laudry Satuan</th>
-                      <th>Total Berat Laundry</th>
-                      <th>Tanggal Selesai Laundry</th>
-                      <th>Status</th>
-                      <th>Action</th>
+                        <th>#</th>
+                        <th>ID Pesanan</th>
+                        <th>Tanggal Laundry</th>
+                        <th>Nama Konsumen</th>
+                        <th>Jenis Laundry</th>
+                        <th>Isi Laudry Satuan</th>
+                        <th>Total Berat Laundry</th>
+                        <th>Tanggal Selesai Laundry</th>
+                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
                     </tfoot>
                   </table>
@@ -722,6 +241,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                   <div class="modal-body">
                     <div class="form-group">
+                      <input type="hide" id="id_order_modal_delete" name="id_order_delete"/>
                       <label>Status</label>
                       <select class="form-control" placeholder="Pilih jenis laundry.">
                         <option>Baru</option>
@@ -747,6 +267,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
+                    <input type="hide" id="id_order_modal_update"/>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Hapus Data Laundry</h4>
@@ -815,6 +336,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
           'autoWidth'   : false
         })
       })
+      $(document).ready(function(){
+        $('#modal-show-data').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget);
+          var dataId = button.data('content');
+          $('#txtId').val(dataId);
+        })
+    })
     </script>    
   </body>
 </html>

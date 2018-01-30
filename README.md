@@ -2,9 +2,9 @@
 This project will handle transaction for laundy shop.
 
 ## Environment
- * Base on : PHP using Code Igniter Framework
+ * Base on : PHP using Code Igniter Framework Version 3.x (https://www.codeigniter.com/download)
  * Text Editor : VS Code
- * Database Environtment : XAMPP(Mysql, Apache)
+ * Database Environtment : XAMPP 3.2 (Mysql, Apache) (https://www.apachefriends.org/download.html)
  * Template : AdminLTE (https://adminlte.io/)
  
 ## TODO
