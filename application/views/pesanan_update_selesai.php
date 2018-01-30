@@ -242,7 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <form method="POST" action="<?= base_url('Pesanan_update_selesai/updateStatus')?>">
                     <div class="modal-body">
                       <div class="form-group">
-                          <input type="hide" id="id_order_modal_update" name="id_order_update"/>
+                          <input type="hidden" id="id_order_modal_update" name="id_order_update"/>
                           <label>Status</label>
                           <select class="form-control" placeholder="Pilih jenis laundry." name="status_modal_update">
                             <!-- #TODO nanti buat selected status based on klikan di baris tabel -->
@@ -255,7 +255,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
-                      <button type="button" class="btn btn-primary">Simpan</button>
+                      <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                   </form>
                 </div>
@@ -270,7 +270,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <input type="hide" id="id_order_modal_update"/>
+                    <input type="text" id="id_order_modal_update"/>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Hapus Data Laundry</h4>
@@ -340,10 +340,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         })
       })
       $(document).ready(function(){
-        $('#modal-show-data').on('show.bs.modal', function (event) {
+        $('#modal-update').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget);
           var dataId = button.data('content');
-          $('#txtId').val(dataId);
+          $('#id_order_modal_update').val(dataId);
         })
     })
     </script>    
