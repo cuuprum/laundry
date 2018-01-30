@@ -21,5 +21,13 @@ class Pesanan_update_selesai extends CI_Controller{
 
         redirect('pesanan_update_selesai');
     }
+
+    public function deletePesanan(){
+        $id = $this->input->post('id_order_delete');
+        
+        $this->pesanan_model->deletePesanan($id);
+
+        redirect('pesanan_update_selesai');
+    }
 }
 ?>

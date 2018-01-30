@@ -269,19 +269,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="modal fade" id="modal-delete">
               <div class="modal-dialog">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <input type="text" id="id_order_modal_update"/>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Hapus Data Laundry</h4>
-                  </div>
-                  <div class="modal-body">
-                    Anda yakin menghapus data ini?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-danger">Hapus</button>
-                  </div>
+                  <form method="POST" action="<?= base_url('Pesanan_update_selesai/deletePesanan') ?>">
+                    <div class="modal-header">
+                      <input type="hidden" id="id_order_modal_delete" name="id_order_delete"/>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Hapus Data Laundry</h4>
+                    </div>
+                    <div class="modal-body">
+                      Anda yakin menghapus data ini?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
+                      <button type="submit" class="btn btn-danger">Hapus</button>
+                    </div>
+                  </form>
                 </div>
                 <!-- /.modal-content -->
               </div>
@@ -345,7 +347,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           var dataId = button.data('content');
           $('#id_order_modal_update').val(dataId);
         })
-    })
+      })
+      $(document).ready(function(){
+          $('#modal-delete').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var dataId = button.data('content');
+            $('#id_order_modal_delete').val(dataId);
+          })
+      })
     </script>    
   </body>
 </html>

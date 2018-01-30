@@ -40,5 +40,9 @@
             $this->db->update('pesanan_laundry', $_data);
         }
 
+        function deletePesanan($_id){
+            $this->db->where('id_order', $_id);
+            $this->db->delete('pesanan_laundry');
+        }
     }
 ?>
