@@ -21,10 +21,11 @@ This project will handle transaction for laundy shop.
  * [x] Create customer view my laundry
  * [x] Create customer view table, fix table labels
  * [x] Order laundry
+ * [x] Login session, All session on pages
  * [ ] Create dinamic page include at artikel controller and view
 
  ### now
- * [ ] Login session
+
 	
  ### later
  * [ ] ubah view pesanan jadi lbh simple hanya lihat pesanan baru saja, sesuai sama input user
