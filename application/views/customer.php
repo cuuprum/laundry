@@ -170,6 +170,13 @@ desired effect
                         <td><?= $row->tanggal_order ?></td>
                         <td><?= $row->jenis_laundry ?></td>
                         <td><?= $row->isi_laundry_satuan ?></td>
+                      <?php
+                        $isi_satuan = json_decode($row->isi_laundry_satuan, true);
+                        foreach($isi_satuan as $isi){
+                          echo "<small class='label pull-right bg-blue'>$isi : $isi</small>";
+                        }
+                        print_r($isi_satuan);
+                      ?>    
                         <td><?= $row->total_berat_kiloan ?></td>
                         <td><?= $row->tanggal_selesai ?></td>
                       <?php

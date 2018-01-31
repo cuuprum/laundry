@@ -92,7 +92,7 @@ desired effect
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="<?php echo base_url("login/logout"); ?>" data-toggle="control-sidebar">Signt Out</a>
+            <a href="<?php echo base_url("login/logout"); ?>" >Signt Out</a>
           </li>
         </ul>
       </div>

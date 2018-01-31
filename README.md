@@ -39,3 +39,11 @@ This project will handle transaction for laundy shop.
  * [ ] print pdf
  * [ ]
  
+
+ ### revision
+  * [ ] Home, need show price list of the laundry service
+  * [ ] Costumer status, list of progress
+  * [ ] Customer order kasih harga
+  * [ ] Costumer and tables, if only satuan dont need show total berat
+  * [ ] Order Laundry, fix the time
+  * [ ] Halaman Depan Admin kasih gambar
