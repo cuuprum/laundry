@@ -165,9 +165,7 @@
                 </div>
             </div>
         </section>
-
         
-
         <section id="footer_widget" class="footer_widget">
             <div class="container">
                 <div class="row">
@@ -227,49 +225,9 @@
             </div>
         </footer>
 
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Payment</h4>
-              </div>
-              <div class="modal-body">
-                <?php foreach ($pembelian as $data2) { ?>
-                <table class="table table-striped">
-                    <tr>
-                      <th>No Struk</th>
-                      <th>Nama Lengkap</th>
-                      <th>Tanggal Pembelian</th>
-                      <th>Total Harga</th>
-                      <th>Alamat</th>
-                    </tr>
-                    <tr>
-                      <td><?php echo $data2['no_struck']; ?></td>
-                      <td><?php echo $data2['nama_pembeli']; ?></td>
-                      <td><?php echo $data2['tgl_pembelian']; ?></td>
-                      <td><?php echo $data2['total_harga']; ?></td>
-                      <td><?php echo $data2['alamat']; ?></td>
-                    </tr>
-                </table>
-              <?php } ?>
-                <p>Pembayaran dilakukan ke rek. 1234566888</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
 		<div class="scrollup">
 			<a href="#"><i class="fa fa-chevron-up"></i></a>
 		</div>
-
 
         <script src="<?php echo base_url()."assets/template/assets/js/vendor/jquery-1.11.2.min.js"?>"></script>
         <script src="<?php echo base_url()."assets/template/assets/js/vendor/bootstrap.min.js"?>"></script>

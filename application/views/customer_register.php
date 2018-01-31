@@ -49,7 +49,7 @@
   </div>
 
         <div class="register-box-body">
-          <p class="login-box-msg"><label>Pendaftaran Akun User Baru</label></p>
+          <p class="login-box-msg"><label>Pendaftaran Akun Konsumen Baru</label></p>
           <?php
             if (isset($logout_message)) {
             echo "<div class='message'>";
@@ -85,6 +85,7 @@
               <input type="password" class="form-control" placeholder="Password" name="password">
               <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
+            <input type="hidden" name="level" value="2" />
             <div class="row">
               <!-- /.col -->
               <div class="col-xs-4 pull-right">

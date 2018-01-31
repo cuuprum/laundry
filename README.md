@@ -20,17 +20,18 @@ This project will handle transaction for laundy shop.
  * [x] Create delete button at table view
  * [x] Create customer view my laundry
  * [x] Create customer view table, fix table labels
+ * [x] Order laundry
  * [ ] Create dinamic page include at artikel controller and view
 
  ### now
  * [ ] Login session
- * [ ] order laundry
 	
  ### later
  * [ ] ubah view pesanan jadi lbh simple hanya lihat pesanan baru saja, sesuai sama input user
- * [ ] pesan return, berhasil gagal dll abis redirect
+ * [ ] pesan return, berhasil gagal dll abis redirect _. done di insert order
  * [ ] bikin view database join itu yang pegawai sama nama customer
  * [ ] customer.php pakai id konsumen untuk view
+
  ### add
  * [ ] customer profile update -> profile username password
  * [ ] admin insert, update, view satu page aja

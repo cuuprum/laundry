@@ -16,18 +16,19 @@ Class Login_Database extends CI_Model {
         $query = $this->db->get();
         if ($query->num_rows() == 0) {
 
-        // Query to insert data in database
-        $this->db->insert('user', $data);
-        if ($this->db->affected_rows() > 0) {
-        return true;
+            // Query to insert data in database
+            $this->db->insert('user', $data);
+            if ($this->db->affected_rows() > 0) {
+                return true;
+            }
         }
-        } else {
-        return false;
+        else {
+            return false;
         }
-        }
+    }
 
         // Read data using username and password
-        public function login($data) {
+    public function login($data) {
 
         $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
@@ -41,7 +42,7 @@ Class Login_Database extends CI_Model {
         } else {
             return false;
         }
-        }
+    }
 
 
         // Read data from database to show data in admin page
@@ -55,12 +56,13 @@ Class Login_Database extends CI_Model {
         $query = $this->db->get();
 
         if ($query->num_rows() == 1) {
-        return $query->result();
-        } else {
-        return false;
+            return $query->result();
         }
+        else {
+            return false;
         }
-
     }
+
+}
 
 ?>

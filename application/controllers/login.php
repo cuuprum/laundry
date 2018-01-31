@@ -35,7 +35,8 @@ public function new_user_registration() {
 
 	$data = array(
 	'username' => $this->input->post('username'),
-	'password' => $this->input->post('password')
+	'password' => $this->input->post('password'),
+	'level' => 2
 	);
 	$result = $this->login_database->registration_insert($data);
 	if ($result == TRUE) {
@@ -52,22 +53,23 @@ public function user_login_process() {
 	$data = array(
 		'username' => $this->input->post('username'),
 		'password' => $this->input->post('password')
-		);
-		$result = $this->login_database->login($data);
+	);
+	$result = $this->login_database->login($data);
 	if ($result == TRUE) {
 		$username = $this->input->post('username');
 		$result = $this->login_database->read_user_information($username);
 		if ($result != false) {
 			$session_data = array(
+			'isLogin' => TRUE,
 			'username' => $result[0]->username,
-			'level' => $result[0]->level,
+			'level' => $result[0]->level
 			);
 			// Add user data in session
-			$this->session->set_userdata('logged_in', $session_data);
+			$this->session->set_userdata($session_data);
 			if($session_data['level'] == 1){
-				$this->load->view('admin');
+				redirect('admin');
 			} else {
-				$this->load->view('customer');
+				redirect('customer');
 			}
 		}
 	} else {

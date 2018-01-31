@@ -43,7 +43,7 @@ if (isset($this->session->userdata['logged_in'])) {
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Login Pengguna</p>
 
     <?php
         if(isset($_POST['login'])){
