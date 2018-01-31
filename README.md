@@ -25,7 +25,7 @@ This project will handle transaction for laundy shop.
  * [ ] Create dinamic page include at artikel controller and view
 
  ### now
-
+ * [ ] perhitungan harga
 	
  ### later
  * [ ] ubah view pesanan jadi lbh simple hanya lihat pesanan baru saja, sesuai sama input user
@@ -36,8 +36,6 @@ This project will handle transaction for laundy shop.
  ### add
  * [ ] customer profile update -> profile username password
  * [ ] admin insert, update, view satu page aja
- * [ ] session login
- * [ ] perhitungan harga
  * [ ] print pdf
  * [ ]
  
