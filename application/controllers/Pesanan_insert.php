@@ -9,8 +9,25 @@ class Pesanan_insert extends CI_Controller{
     }
     
     public function index(){
-        $data['getNewId'] = $this->pesanan_model->getNewId();
-        $this->load->view('Pesanan_insert', $data);
+        if($this->session->userdata('isLogin') == FALSE){
+            $this->session->set_userdata('errorMsg','Silahkan login terlebih dahulu.');
+            redirect(base_url('login'));
+        }else{        
+            $level = $this->session->userdata('level');
+            // 1 = admin, 2 konsumen
+
+            if($level == 1){
+                $data['id'] = $this->session->userdata('id');
+                $data['username'] = $this->session->userdata('username');
+                $data['level'] = $level;
+                $data['getNewId'] = $this->pesanan_model->getNewId();
+                $this->load->view('Pesanan_insert', $data);   
+
+            }else{
+                $this->session->set_userdata('errorMsg','Tidak ada hak akses.');
+                redirect(base_url('home'));
+            }    
+        } 
     }
 
     function insertPesanan(){
@@ -42,7 +59,7 @@ class Pesanan_insert extends CI_Controller{
         // #TODO nanti bikin return status insert data nya ya
         $this->pesanan_model->insertPesanan($data);
 
-        redirect(base_url('Pesanan_view');
+        redirect(base_url('Pesanan_view'));
     }
 }
 ?>
