@@ -8,8 +8,26 @@ class Customer_order extends CI_Controller{
         $this->load->model('customer_model');
     }
 
-    public function index(){        
-        $this->load->view('customer_order');
+    public function index(){      
+        if($this->session->userdata('isLogin') == FALSE){
+            $this->session->set_userdata('errorMsg','Silahkan login terlebih dahulu.');
+            redirect(base_url('login'));
+        }else{        
+            $level = $this->session->userdata('level');
+            // 1 = admin, 2 konsumen
+
+            if($level == 2){
+                $data['id'] = $this->session->userdata('id');
+                $data['username'] = $this->session->userdata('username');
+                $data['level'] = $level;
+ 
+                $this->load->view('customer_order', $data);     
+
+            }else{
+                $this->session->set_userdata('errorMsg','Tidak ada hak akses.');
+                redirect(base_url('home'));
+            }    
+        } 
     }
 
     function insertOrderLaundry(){
@@ -43,7 +61,7 @@ class Customer_order extends CI_Controller{
         else
             echo "<script type='text/javascript'>alert('Mohon maaf order gagal.');</script>";
         
-        redirect('customer');
+            redirect(base_url('customer'));
     }
 }
 ?>

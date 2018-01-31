@@ -57,20 +57,37 @@ public function user_login_process() {
 	$result = $this->login_database->login($data);
 	if ($result == TRUE) {
 		$username = $this->input->post('username');
-		$result = $this->login_database->read_user_information($username);
-		if ($result != false) {
+		$check = $this->login_database->read_user_information($username);
+
+		if ($check->num_rows() > 0) {
+			$result = $check->result_array();
 			$session_data = array(
 			'isLogin' => TRUE,
-			'username' => $result[0]->username,
-			'level' => $result[0]->level
+			'username' => $result[0]['username'],
+			'level' => $result[0]['level'],
+			'errorMsg' => ''
 			);
 			// Add user data in session
 			$this->session->set_userdata($session_data);
+			//print_r($this->session->userdata());
+
 			if($session_data['level'] == 1){
-				redirect('admin');
-			} else {
-				redirect('customer');
+				redirect(base_url('admin'));
+			} elseif($session_data['level'] == 2){
+				redirect(base_url('customer'));
+			}else{
+				$data = array(
+					'error_message' => 'Level no result'
+				);
+				$this->load->view('login', $data);
 			}
+			
+		}
+		else{
+			$data = array(
+				'error_message' => 'No result.'
+			);
+			$this->load->view('login', $data);
 		}
 	} else {
 		$data = array(
@@ -85,9 +102,12 @@ public function logout() {
 
 	// Removing session data
 	$sess_array = array(
-	'username' => ''
+		'isLogin' => FALSE,
+		'username' => '',
+		'level' => '',
+		'errorMsg' => ''
 	);
-	$this->session->unset_userdata('logged_in', $sess_array);
+	$this->session->set_userdata($sess_array);
 	$data['message_display'] = 'Successfully Logout';
 	$this->load->view('login', $data);
 	}

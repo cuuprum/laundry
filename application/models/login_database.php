@@ -55,12 +55,7 @@ Class Login_Database extends CI_Model {
         $this->db->limit(1);
         $query = $this->db->get();
 
-        if ($query->num_rows() == 1) {
-            return $query->result();
-        }
-        else {
-            return false;
-        }
+        return $query;
     }
 
 }

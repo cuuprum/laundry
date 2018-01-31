@@ -19,7 +19,7 @@ class Pesanan_update_selesai extends CI_Controller{
 
         $this->pesanan_model->updateStatus($data, $condition);
 
-        redirect('pesanan_update_selesai');
+        redirect(base_url('pesanan_update_selesai'));
     }
 
     public function deletePesanan(){
@@ -27,7 +27,7 @@ class Pesanan_update_selesai extends CI_Controller{
         
         $this->pesanan_model->deletePesanan($id);
 
-        redirect('pesanan_update_selesai');
+        redirect(base_url('pesanan_update_selesai'));
     }
 }
 ?>

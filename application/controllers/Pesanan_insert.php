@@ -42,7 +42,7 @@ class Pesanan_insert extends CI_Controller{
         // #TODO nanti bikin return status insert data nya ya
         $this->pesanan_model->insertPesanan($data);
 
-        redirect('Pesanan_view');
+        redirect(base_url('Pesanan_view');
     }
 }
 ?>
